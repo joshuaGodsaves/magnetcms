@@ -1,0 +1,15 @@
+.container-fluid
+    .container
+        .row.justify-content-center
+            .col-12
+                h5 Just a few products
+                .d-flex.flex-wrap
+                    for i in [12,3,4,2,5,6,]
+                        .productBox(style="width:250px").m-3
+                            div(style="height:250px; background-image:url(http://www.grinvalds3d.com/wp-content/uploads/2016/01/1-1.jpg)").border.site-bg-img
+                            div.py-1.d-flex.justify-content-between.px-1
+                                span Product Name
+                                span
+                                    .fa.fa-arrow-down
+                            div
+

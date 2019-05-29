@@ -8,8 +8,10 @@
 /*
 Query md screen
 */
-
-
+.site-bg-img{
+    background-position: center;
+    background-size: cover;
+}
 #storeMdMenu{
     display: none;
 }
@@ -21,7 +23,7 @@ Query md screen
     #drawer{
         padding:0;
         position: fixed;
-        left: 0;
+        left: -100%;
         background: #20c997;
         width: 250px;
         top:0;
@@ -30,6 +32,9 @@ Query md screen
         justify-content: flex-start !important;
         flex-direction: column !important;
         align-items: flex-start !important;
+    }
+    .moveMenuIn{
+        left: 0;
     }
     .items{
         padding:0;margin:0;

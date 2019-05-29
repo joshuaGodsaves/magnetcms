@@ -1,21 +1,22 @@
+
 .position-fixed(style="bottom:48px; right: 24px")
     .p-3.bg-light.rounded-circle.border(style="box-shadow:1px 1px 10px 2px rgba(0,0,0,.2)")
         .fa.fa-2x.fa-search
-.container.position-sticky
-    #menuContainer.row.align-items-center.p-3.p-sm-3.p-md-3
-        .col.d-flex.align-items-center.justify-content-center
-            a(href="/") Store Name
+.container.position-sticky.text-light
+    #menuContainer.row.align-items-center.p-3.p-sm-3.py-md-3
         .col.d-flex.align-items-center.justify-content-center#drawer
+            img(src="https://banner2.kisspng.com/20180716/beq/kisspng-craft-magnets-horseshoe-magnet-magnetism-magnetic-lead-generation-5b4cb0472bd831.1725742715317525191796.jpg", style="height:40px; width:40px")
+            a(href="/") Store Name
             .div.p-3.p-sm-3.p-md-4.bg-light.w-100#storeMdMenu
-                span Store Named
+                span Store Name
             span#sectionMenuToggler.position-relative
-                div.px-3.py-2.my-1.bg-danger Sections
+                div.px-3.py-2.my-1.w-100 Sections
                 #sectionList.position-absolute.my-3.border(style="left:calc(50% - 125px)")
                     .list-group.list-group-flush(style="width:250px; max-height:300px").items
                         for i in [13,4,3,4,5,56]
                             .list-group-item Section Name
             span#categoriesMenuToggler
-                div.px-3.py-2.my-1.bg-danger Categories
+                div.px-3.py-2.my-1 Categories
         .col.d-flex.align-items-center.justify-content-center
             a(href="/contact").mx-2.text-light Contact
             a(href="/about").mx-3.text-light About
@@ -23,3 +24,6 @@
                 a(href="/users/signin").text-light SIGNUP
                 span.px-1 /
                 a(href="/users/signup").text-light SIGNIN
+            span.text-dark.mx-2.p-1.px-2.bg-light.rounded
+                .fa.fa-shopping-cart.mx-2
+                .fa.fa-user-circle.mx-2

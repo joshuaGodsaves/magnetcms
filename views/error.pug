@@ -1,6 +1,17 @@
 extends layout
-
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  .div.bg-light.px-2(style="font-size:11px").p-1.d-flex.justify-content-around
+    div
+      span.mx-2 Phone +123 234 332 334
+      span.mx-2 Location
+        .fa.fa-globe.mx-2
+    div
+      span
+        .fa.fa-instagram
+      span
+        .fa.fa-facebook
+      span
+        .fa.fa-twitter
+  .container-fluid.bg-dark.sticky-top.bg-light
+    include ./components/menu
+  .container-fluid
