@@ -1,5 +1,16 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
+  .container-fluid.bg-dark.sticky-top
+      include ./components/menu
+  .container-fluid
+  div(style="height:450px; background:orange")
+      include ./components/businessAdvertScroller
+
+  include ./components/services
+
+
+
+
+
+
+

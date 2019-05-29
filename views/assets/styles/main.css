@@ -1,0 +1,47 @@
+#sectionList{
+    display: none;
+
+}
+.show{
+    display: block;
+}
+/*
+Query md screen
+*/
+
+
+#storeMdMenu{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #storeMdMenu{
+        display: block;
+    }
+    #drawer{
+        padding:0;
+        position: fixed;
+        left: 0;
+        background: #20c997;
+        width: 250px;
+        top:0;
+        box-shadow: .5px .5px 10px 2px;
+        height: 100% !important;
+        justify-content: flex-start !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    .items{
+        padding:0;margin:0;
+    }
+    #sectionMenuToggler, #categoriesMenuToggler{
+
+    }
+    #sectionList{
+        left: 0 !important;
+        padding:0;
+        position: relative !important;
+    }
+
+}
+
