@@ -1,7 +1,19 @@
 extends layout
 block content
-    .container-fluid
-
-    .container-fluid
-
-    .container
+    .bg-dark.text-light.jus
+        .container.d-flex.p-3.bg-dark.text-light.jus
+            h5 Store Name, New user
+    .container-fluid.my-5
+        .container
+            .row.justify-content-center
+                .col-6.px-5
+                    div
+                        h5 Login
+                        input(placeholder="Email").form-control.rounded-0.my-3
+                        input(placeholder="Password").form-control.rounded-0.my-3
+                        .btn.btn-primary.rounded-0.w-100.my-3 Login
+                    div
+                        h5 Don't have an account
+                        .btn.btn-primary.rounded-0.w-100.my-3 Create
+                .col-6
+    include ./components/footer

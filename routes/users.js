@@ -3,9 +3,17 @@ var router = express.Router();
 var axios = require('axios')
 var userModel= require("../data/models/user").model
 var accessCustomers= require("../data/index").accessCustomers
+var session = require('express-session')
 
 /* GET users listing. */
 router.get('/',async  function(req, res, next) {
+  req.session.user={
+    userName: "",
+    customerId: "",
+    customer: ""
+  }
+
+
   res.json('respond with a resource');
 });
 
@@ -18,7 +26,6 @@ router.get('/signup',async  function(req, res, next) {
 });
 
 router.post('/signup',async  function(req, res, next) {
-
   let result = undefined
   if(req.body.email){
     let result= await  axios.post("http://localhost:5000/register", req.body)
@@ -30,7 +37,6 @@ router.post('/signup',async  function(req, res, next) {
     }else{
       res.json({completed: false, message: "user signed up to magnet add added as a customer to this store"})
     }
-
   }
   if(req.body.customer){
     axios.post(`http://localhost:5000/api/store/${"5ce4697ccad6b823fceec81c"}/customer`, {customer: req.body.customer})
@@ -42,20 +48,10 @@ router.post('/login',async  function(req, res, next) {
   let email= req.body.email
   let password= req.body.password
   // Log user in
-  let user= await userModel.findOne({
-    _id: email, password: password
-  }).exec()
-  if(user){
-
-    let customer= await accessCustomers.findItemByPropVal("customer", email)
-    if(customer){
-      // Log user in  proper.
-      res.json({complete: true, error: false, data:{customer: customer}})
-    }
-
-  }else{
-    console.log('user not a member of magnet')
-    res.send("")
+  req.session.user={
+    userName: "",
+    customerId: "",
+    customer: ""
   }
 
 });

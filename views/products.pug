@@ -15,3 +15,18 @@ block content
     .container-fluid.bg-dark.sticky-top.bg-light
         include ./components/menu
     .container-fluid
+        .row.justify-content-around
+            .col-2.my-3
+                .list-group.list-group-flush.border
+                    .list-group-item.p-1 Head
+                    .list-group-item.p-1 Item
+                    .list-group-item.p-1 Item
+            .col-10.d-flex.flex-wrap.justify-content-between
+                for i in [1,2,3,4,5,6,7,8,9,6,7,8,9,8,7,6,5,4,3,2,3]
+                    .productBox(style="width:250px").m-3
+                        div(style="height:250px; background-image:url(http://www.grinvalds3d.com/wp-content/uploads/2016/01/1-1.jpg)").border.site-bg-img
+                        div.py-1.d-flex.justify-content-between.px-1
+                            span Product Name
+                            span
+                                .fa.fa-arrow-down
+                        div
