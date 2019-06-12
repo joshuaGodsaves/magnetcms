@@ -14,14 +14,14 @@
     background-repeat: no-repeat;
 }
 
-
 .price-tag{
     padding: 8px;
     padding-left: 16px;
-    background: blue;
+    background: #ff233e;
     color: white;
+    border-radius: 0px 4px 4px 0px;
     width: fit-content;
-
+    box-shadow:.5px .5px 4px 1px rgba(0,0,0,.4);
 }
 
 .appInput{
@@ -29,3 +29,33 @@
     border:0 !important;
     background: rgba(100,100,100,.5);
 }
+
+.appList{
+    padding:0px;
+    background: midnightblue;
+}
+.appList li{
+    background: #d6d8d9;
+    list-style: none;
+    padding:6px 16px;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+.appList li:hover{
+    background: #fbf8ff;
+}
+
+@media screen and (max-width: 720px) {
+
+    .appListOnSmMkAbs{
+        position: absolute;
+        width:100%;
+        background: red;
+        top:100%;
+        left:0px;
+        z-index: 10;
+    }
+}
+
+

@@ -12,23 +12,22 @@ router.get('/',async  function(req, res, next) {
     customerId: "",
     customer: ""
   }
-
-
   res.json('respond with a resource');
 });
 
 router.get('/signin',async  function(req, res, next) {
-  res.render('signin')
+  res.render('signin.ejs')
 });
 
 router.get('/signup',async  function(req, res, next) {
-  res.render('signup')
+  res.render('signup.ejs')
 });
 
 router.post('/signup',async  function(req, res, next) {
   let result = undefined
   if(req.body.email){
     let result= await  axios.post("http://localhost:5000/register", req.body)
+
     if(result && result.data.token){
       axios.post(`http://localhost:5000/api/store/${"5ce4697ccad6b823fceec81c"}/customer`, {customer: result.data.user})
 

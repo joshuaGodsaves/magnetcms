@@ -9,11 +9,11 @@ var accessBlog = require('../data/index').accessBlog
 var accessSection = require('../data/index').accessSection
 
 router.get('/', function(req, res, next) {
-    res.render("products")
+    res.render('products.ejs', {page:'Home', menuId:'home'})
 });
 
 router.get('/:product', function(req, res, next) {
-    res.render("product")
+    res.render("product.ejs")
 });
 
 

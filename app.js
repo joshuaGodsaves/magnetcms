@@ -30,9 +30,6 @@ app.use(expressSession({resave:false, saveUninitialized: false, secret:"secret"}
 app.use("/assets", express.static(path.join(__dirname, '/views/assets')));
 
 
-app.use(function(req, res, next){ console.log(req.session); next()})
-
-
 //Acceptable routes
 app.use('/', index);
 app.use('/products', products)

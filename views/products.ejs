@@ -1,0 +1,133 @@
+<html>
+    <%- include includes/header.ejs %>
+    <body>
+        <% include includes/menuContainer.ejs %>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 p-2 d-flex">
+
+                    </div>
+                    <div class="col-lg-2 col-xl-3">
+                        <div class="row no-gutters">
+                            <div class="col-6 col-md-6 col-lg-12">
+                                <div class="position-relative">
+                                    <div class="p-2 my-2 bg-light" data-toggle="collapse" data-target="#categoriesList">Categories</div>
+                                    <ul class="appList appListOnSmMkAbs" id="categoriesList">
+                                        <li>
+                                            <span>List item</span>
+                                            <span class="fa fa-chevron-right"></span>
+                                        </li>
+                                        <li>List item</li>
+                                        <li>
+                                            <span>List item</span>
+                                            <span class="fa fa-chevron-right"></span>
+                                        </li>
+                                        <li>List item</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-12">
+                                <div class="position-relative">
+                                    <div class="p-2 my-2 bg-light" data-toggle="collapse" data-target="#sectionList">Section</div>
+                                    <ul class="appList appListOnSmMkAbs" id="sectionList">
+                                        <li>
+                                            <span>List item</span>
+                                            <span class="fa fa-chevron-right"></span>
+                                        </li>
+                                        <li>List item</li>
+                                        <li>
+                                            <span>List item</span>
+                                            <span class="fa fa-chevron-right"></span>
+                                        </li>
+                                        <li>List item</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-xl-9">
+                        <div class="row justify-content-sm-center">
+                            <% [1,2,2,3,4,6].forEach(v=>{ %>
+                                <div class="col-10 col-md-4 col-lg-4 my-2">
+                                    <img src="/assets/images/shirt.jpeg" class="img-fluid"/>
+                                    <div class="py-1 bg-danger d-flex align-items-center justify-content-between">
+                                        <div class="price-tag">$0.00</div>
+                                        <div class="mx-3">
+                                            <span class="fa fa-creative-commons-nc"> </span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="my-2 btn btn-primary rounded-0 btn-outline-primary w-50 productAddButton" data-product-id=<% v %>> Buy </button>
+                                    </div>
+                                </div>
+                            <% })%>
+                                <div class="py-3 col-12 d-flex justify-content-end bg-light d-flex justify-content-around align-items-center">
+                                    <nav aria-label="...">
+                                        <ul class="pagination   m-0 p-0">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active" aria-current="page">
+                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <button class="btn btn-primary rounded-0 btn-outline-danger" id="checkoutbtn">
+                                        Checkout
+                                    </button>
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script>
+            let selectedProducts= []
+
+            let mdBreakPoint= 720
+            function updatVariableComponent(event, width= null){
+                width= width || event.currentTarget.innerWidth
+                if(width <= mdBreakPoint){
+                    $(".appList").addClass("collapse")
+                    $(".appList").removeClass("show")
+                }else{
+                    $(".appList").removeClass("collapse")
+                    $(".appList").addClass("show")
+                }
+            }
+
+            updatVariableComponent(null, $(window).innerWidth() )
+
+            $(".appList").addClass("collapse")
+
+            $(window).resize(function(event){
+                updatVariableComponent(event)
+            });
+
+            $(".productAddButton").click(function(){
+                let productId= $(this).attr("data-product-id")
+                let check= selectedProducts.some(v=> v==productId)
+                if(check){
+                    // aready added remove from list
+                    $(this).removeClass("btn-outline-danger")
+                    selectedProducts= selectedProducts.filter(v=> v!=productId)
+                }else{
+                    $(this).addClass("btn-outline-danger")
+                    selectedProducts.push(productId)
+                }
+
+            });
+
+
+        </script>
+        <% include includes/footer.ejs %>
+        <% include includes/scripts-bottom.ejs %>
+    </body>
+</html>

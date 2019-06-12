@@ -1,0 +1,73 @@
+<html>
+<%- include includes/header.ejs %>
+<body>
+<% include includes/menuContainer.ejs %>
+<div class="container-fluid my-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img src="/assets/images/shirt.jpeg" class="img-fluid"/>
+            </div>
+            <div class="col-5">
+                <div>
+                    <span class="badge badge-info p-2 rounded-0">NEW</span>
+                    <h1>Full product name in all goes here</h1>
+                    <div class="my-3">
+                        <span class="p-2 my-2 bg-dark text-light">Tag</span>
+                        <span class="p-2 my-2 bg-dark text-light">Tag</span>
+                        <span class="p-2 my-2 bg-dark text-light">Tag</span>
+                        <span class="p-2 my-2 bg-dark text-light">Tag</span>
+                    </div>
+                    <button class="btn btn-dark btn-lg w-100 my-3 rounded-0">BUY</button>
+                    <article>
+                        <h5> Product details</h5>
+                        <p class="text-justify">dskdnksnd sdnlaks mcm csnaicen mc dnieonf mcdskjfjls ifdsaca snc nicni dscs
+                        d nsinciadsjjc cnsaduf uefrd feifefefjiewafdscxn zmjjn dsif ifds ifed dfisiosa
+                        fd sfdsa ifd sfids ifidifdcxjjyggfwwdchsxbhbbc diosi</p>
+                    </article>
+                    <div class="my-3">
+                        <h5> Share products</h5>
+                        <div class="my-3">
+                            <span class="p-2  mx-2 ml-0 bg-dark text-light">
+                                <span class="fa fa-fast-forward"></span>
+                            </span>
+                            <span class="p-2 mx-2  bg-dark text-light">
+                                <span class="fa fa-fast-forward"></span>
+                            </span>
+                            <span class="p-2  mx-2 bg-dark text-light">
+                                <span class="fa fa-fast-forward"></span>
+                            </span>
+                            <span class="p-2  mx-2 bg-dark text-light">
+                                <span class="fa fa-fast-forward"></span>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 my-5">
+                <h5>Related Products</h5>
+                <div class="row ">
+                    <% [1,2,2,3,4,6].forEach(v=>{ %>
+                        <div class="col-10 col-md-4 col-lg-4 col-xl-3 my-2">
+                            <img src="/assets/images/shirt.jpeg" class="img-fluid"/>
+                            <div class="py-1 bg-danger d-flex align-items-center justify-content-between">
+                                <div class="price-tag">$0.00</div>
+                                <div class="mx-3">
+                                    <span class="fa fa-creative-commons-nc"> </span>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="my-2 btn btn-primary rounded-0 btn-outline-primary w-50"> Buy </button>
+                            </div>
+                        </div>
+                    <% })%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% include includes/footer.ejs %>
+<% include includes/scripts-bottom.ejs %>
+</body>
+</html>
