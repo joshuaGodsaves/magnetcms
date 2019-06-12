@@ -1,52 +1,7 @@
-#sectionList{
-    display: none;
-
-}
-.show{
-    display: block;
-}
-/*
-Query md screen
-*/
-.site-bg-img{
-    background-position: center;
+#introCover{
+    background-image: url("http://localhost/assets/images/business.jpeg");
     background-size: cover;
+    background-position: top;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
 }
-#storeMdMenu{
-    display: none;
-}
-
-@media screen and (max-width: 768px) {
-    #storeMdMenu{
-        display: block;
-    }
-    #drawer{
-        padding:0;
-        position: fixed;
-        left: -100%;
-        background: #20c997;
-        width: 250px;
-        top:0;
-        box-shadow: .5px .5px 10px 2px;
-        height: 100% !important;
-        justify-content: flex-start !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-    }
-    .moveMenuIn{
-        left: 0;
-    }
-    .items{
-        padding:0;margin:0;
-    }
-    #sectionMenuToggler, #categoriesMenuToggler{
-
-    }
-    #sectionList{
-        left: 0 !important;
-        padding:0;
-        position: relative !important;
-    }
-
-}
-
