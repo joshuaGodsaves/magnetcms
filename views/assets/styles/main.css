@@ -5,3 +5,27 @@
     background-attachment: scroll;
     background-repeat: no-repeat;
 }
+
+#subscriptionBackgroundCover{
+    background-image: url("http://localhost/assets/images/custerrelationship.jpg");
+    background-size: cover;
+    background-position: top;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+}
+
+
+.price-tag{
+    padding: 8px;
+    padding-left: 16px;
+    background: blue;
+    color: white;
+    width: fit-content;
+
+}
+
+.appInput{
+    outline: 0 !important;
+    border:0 !important;
+    background: rgba(100,100,100,.5);
+}

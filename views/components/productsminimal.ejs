@@ -1,0 +1,18 @@
+<div class="container-fluid bg-light py-5">
+    <div class="container">
+        <h5 class="my-3">Latest Products</h5>
+        <div class="row">
+            <% [1,2,2,3,4,6].forEach(v=>{ %>
+                <div class="col-10 col-md-4 col-lg-4 col-xl-3 my-2">
+                    <img src="/assets/images/shirt.jpeg" class="img-fluid"/>
+                    <div class="py-1 bg-danger">
+                        <div class="price-tag">$0.00</div>
+                    </div>
+                    <div>
+                        <button class="my-2 btn btn-primary rounded-0 btn-outline-primary w-50"> Buy </button>
+                    </div>
+                </div>
+            <% })%>
+        </div>
+    </div>
+</div>
